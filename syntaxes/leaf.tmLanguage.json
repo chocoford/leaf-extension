@@ -16,15 +16,6 @@
 	  },
 	  {
 		"include": "#variables"
-	  },
-	  {
-		"include": "#string"
-	  },
-	  {
-		"include": "#numbers"
-	  },
-	  {
-		"include": "#invalid"
 	  }
 	],
 	"repository": {

@@ -7,9 +7,9 @@ patterns:
   - include: '#keywords'
   - include: '#tags'
   - include: '#variables'
-  - include: '#string'
-  - include: '#numbers'
-  - include: '#invalid'
+  # - include: '#string'
+  # - include: '#numbers'
+  # - include: '#invalid'
 repository:
   keywords:
     patterns:
