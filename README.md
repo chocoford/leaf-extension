@@ -32,8 +32,4 @@ Initial release
 ## Bugs and Ideas?
 
 * if you find a bug or have ideas, please let me know 🙃
-* 
-
-
-
-
+* https://github.com/chocoford/leaf-extension
