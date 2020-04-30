@@ -29,6 +29,10 @@ This Extension adds `HTML` and `Leaf` syntax highlighting and snippets for [.lea
 
 Initial release
 
+### 0.0.3
+
+remove `string`, `number`, `invalid` detection out of tag.
+
 ## Bugs and Ideas?
 
 * if you find a bug or have ideas, please let me know 🙃
