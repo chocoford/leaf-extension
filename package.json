@@ -2,7 +2,7 @@
     "name": "leaf",
     "displayName": "vapor-leaf",
     "description": "vapor-leaf syntax highlighting",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "chocoford",
     "engines": {
         "vscode": "^1.44.0"
