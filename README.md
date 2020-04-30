@@ -6,13 +6,13 @@ This Extension adds `HTML` and `Leaf` syntax highlighting and snippets for [.lea
 
 ### Syntax highlighting
 
-![](Public/preview.gif)
+![](https://github.com/chocoford/leaf-extension/blob/master/Public/preview.gif?raw=true) 
 
 
 
 ### Snippets
 
-![](Public/snippets_preview.gif)
+![](https://github.com/chocoford/leaf-extension/blob/master/Public/snippets_preview.gif?raw=true)
 
 
 
