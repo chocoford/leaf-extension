@@ -3,6 +3,7 @@
     "displayName": "vapor-leaf",
     "description": "vapor-leaf syntax highlighting",
     "version": "0.0.1",
+    "publisher": "chocoford",
     "engines": {
         "vscode": "^1.44.0"
     },
