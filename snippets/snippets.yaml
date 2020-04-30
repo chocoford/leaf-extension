@@ -1,0 +1,104 @@
+get variable or tag:
+  prefix: '\#'
+  body:
+    - "#$1($2)"
+  description: 'Get variable or costom tag'
+
+if statement:
+  prefix: 'if'
+  body:
+    - "#if($1):"
+    - "\t$2"
+    - "#endif"
+  description: 'Changes which path your code takes'
+
+if-else statement:
+  prefix: 'ifelse'
+  body:
+    - "#if($1):"
+    - "\t$2"
+    - '#else:'
+    - "\t$3"
+    - "#endif"
+  description: 'Changes which path your code takes'
+
+if-else-if statement:
+  prefix: 'ifelseif'
+  body:
+    - "#if($1):"
+    - "\t$2"
+    - "#elseif($3):"
+    - "\t$4"
+    - "#else:"
+    - "\t$5"
+    - "#endif"
+  description: 'Changes which path your code takes'
+
+for statement:
+  prefix: 'for'
+  body:
+    - "#for($1 in $2):"
+    - "\t$3"
+    - "#endfor"
+  description: 'Repeat code a given for each entity'
+
+extend statement:
+  prefix: 'extend'
+  body:
+    - "#extend(\"$1\"):"
+    - "\t$2"
+    - "#endextend"
+  description: 'extend statement'
+
+export statement:
+  prefix: 'export'
+  body:
+    - "#export(\"$1\"):"
+    - "\t$2"
+    - "#endexport"
+  description: 'export statement'
+
+import statement:
+  prefix: 'import'
+  body:
+    - "#import(\"$1\")"
+  description: 'import statement'
+
+# tags
+date tag:
+  prefix: 'date'
+  body:
+    - "date($1)"
+  description: 'a tag that get the value'
+
+count tag:
+  prefix: 'count'
+  body:
+    - "count($1)"
+  description: 'a tag that get the numbers of a list'
+
+capitalize tag:
+  prefix: 'capitalize'
+  body:
+    - "capitalize($1)"
+  description: 'uppercases the first letter of any string'
+
+uppercase tag:
+  prefix: 'uppercase'
+  body:
+    - "uppercase($1)"
+  description: 'a tag that get the uppercase form of given value'
+
+lowercase tag:
+  prefix: 'lowercase'
+  body:
+    - "lowercase($1)"
+  description: 'a tag that get the lowercase form of given value'
+
+contains tag:
+  prefix: 'contains'
+  body:
+    - "contains($1, $2)"
+  description: 'accepts an array and a value as its two parameters, and returns true if the array in parameter one contains the value in parameter two'
+
+   
