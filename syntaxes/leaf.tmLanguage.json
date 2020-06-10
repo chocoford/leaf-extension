@@ -46,13 +46,28 @@
 		  },
 		  {
 			"comment": "branch keywords",
-			"name": "meta.keyword.branch.leaf",
-			"match": "(\\#if|\\#elseif|\\#else|\\#endif)",
-			"captures": {
-			  "0": {
-				"name": "keyword.control.branch.leaf"
+			"begin": "(\\#if|\\#elseif)(\\()",
+			"beginCaptures": {
+			  "1": {
+				"name": "keyword.control.branch"
 			  }
-			}
+			},
+			"end": "\\):",
+			"patterns": [
+			  {
+				"comment": "properties",
+				"name": "meta.variables.leaf",
+				"match": "([A-Za-z_])(\\w+)(.\\w+)?",
+				"captures": {
+				  "0": {
+					"name": "variable.parameter.leaf"
+				  }
+				}
+			  },
+			  {
+				"include": "#string"
+			  }
+			]
 		  },
 		  {
 			"comment": "embed keywords",
@@ -66,11 +81,41 @@
 		  },
 		  {
 			"comment": "for loop",
-			"name": "meta.keyword.loop.leaf",
-			"match": "(\\#for|in|\\#endfor)",
+			"begin": "(\\#for)(\\()",
+			"beginCaptures": {
+			  "1": {
+				"name": "keyword.control.loop.leaf"
+			  },
+			  "2": {
+				"name": "plain.leaf"
+			  }
+			},
+			"end": "\\):",
+			"endCaptures": {
+			  "0": {
+				"name": "plain.leaf"
+			  }
+			},
+			"patterns": [
+			  {
+				"comment": "for loop",
+				"name": "meta.keyword.loop.leaf",
+				"match": "in",
+				"captures": {
+				  "0": {
+					"name": "keyword.control.loop.leaf"
+				  }
+				}
+			  }
+			]
+		  },
+		  {
+			"comment": "end keyword",
+			"name": "meta.keyword.end.leaf",
+			"match": "(\\#endfor|\\#endif|\\#else)",
 			"captures": {
 			  "0": {
-				"name": "keyword.control.loop.leaf"
+				"name": "keyword.control.end.leaf"
 			  }
 			}
 		  },
@@ -213,6 +258,9 @@
 			"name": "variable.parameter.leaf"
 		  }
 		}
+	  },
+	  "inner_keywords": {
+		"name": "meta.inner_keyword.loop.leaf"
 	  },
 	  "variables": {
 		"patterns": [

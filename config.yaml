@@ -24,20 +24,49 @@ repository:
         captures:
           '0': {name: constant.language.nil.leaf}
       - comment: 'branch keywords'
-        name: meta.keyword.branch.leaf
-        match: (\#if|\#elseif|\#else|\#endif)
-        captures:
-          '0': {name: keyword.control.branch.leaf}    
+        begin: '(\#if|\#elseif)(\()'
+        beginCaptures: 
+          '1': {name: keyword.control.branch}
+        end: '\):'
+        patterns:
+          - comment: 'properties'
+            name: meta.variables.leaf
+            match: '([A-Za-z_])(\w+)(.\w+)?'
+            captures:
+              '0': {name: variable.parameter.leaf}
+          - include: '#string'
+        # name: meta.keyword.branch.leaf
+        # match: (\#if|\#elseif|)
+        # captures:
+        #   '0': {name: keyword.control.branch.leaf}
+
       - comment: 'embed keywords'
         name: meta.keyword.leaf
         match: (\#import|\#export|\#endexport|\#extend|\#endextend)
         captures:
           '0': {name: keyword.control.leaf}
+
       - comment: 'for loop'
-        name: meta.keyword.loop.leaf
-        match: (\#for|in|\#endfor)
+        begin: '(\#for)(\()'
+        beginCaptures:
+          '1': {name: keyword.control.loop.leaf}
+          '2': {name: plain.leaf}
+        end: '\):'
+        endCaptures: 
+          '0': {name: plain.leaf}
+        patterns:
+          - comment: 'for loop'
+            name: meta.keyword.loop.leaf
+            match: in
+            captures:
+              '0': {name: keyword.control.loop.leaf}
+      
+      - comment: 'end keyword'
+        name: meta.keyword.end.leaf
+        match: (\#endfor|\#endif|\#else)
         captures:
-          '0': {name: keyword.control.loop.leaf}
+          '0': {name: keyword.control.end.leaf}
+
       - comment: 'operators'
         name: meta.keyword.operator.leaf
         match: (>|<|>=|<=|==|!=|&&)
@@ -96,6 +125,11 @@ repository:
     match: '([A-Za-z_])(\w+)'
     captures:
       '0': {name: variable.parameter.leaf}
+  
+  inner_keywords:
+    name: meta.inner_keyword.loop.leaf
+
+
   variables:
     patterns:
       - name: meta.variable.leaf
