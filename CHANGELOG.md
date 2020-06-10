@@ -9,3 +9,8 @@ Initial release
 ## 0.0.3-0.04
 
 remove `number`, `invalid` detection out of tag.
+
+## 0.0.5
+
+fix bugs. Such as wrong highlighting of `in`.
+add a syntax highlight for parameters in `if(...):`
