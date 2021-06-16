@@ -1,54 +1,79 @@
 {
-    "name": "leaf",
-    "displayName": "vapor-leaf",
-    "description": "vapor-leaf syntax highlighting",
-    "version": "0.0.5",
-    "publisher": "chocoford",
-    "engines": {
-        "vscode": "^1.44.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "leaf",
+  "displayName": "vapor-leaf",
+  "description": "vapor-leaf syntax highlighting",
+  "version": "0.0.6",
+  "publisher": "chocoford",
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "keywords": [
+    "leaf",
+    "Leaf",
+    "vapor",
+    "Vapor"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "bugs": {
+    "url": "https://github.com/chocoford/leaf-extension",
+    "email": "zzaiasdf@gmail.com"
+  },
+  "homepage": "https://github.com/chocoford/leaf-extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chocoford/leaf-extension"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "leaf",
+        "aliases": [
+          "leaf",
+          "Leaf"
+        ],
+        "extensions": [
+          ".leaf"
+        ],
+        "configuration": "./languages/language-configuration.json"
+      },
+      {
+        "id": "leaf-html",
+        "aliases": [
+          "Leaf-html"
+        ],
+        "configuration": "./languages/leaf-html-language-configuration.json"
+      }
     ],
-    "bugs": {
-        "url": "https://github.com/chocoford/leaf-extension",
-        "email": "zzaiasdf@gmail.com"
-    },
-    "homepage": "https://github.com/chocoford/leaf-extension",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/chocoford/leaf-extension"
-    },
-    "contributes": {
-        "languages": [
-            {
-                "id": "leaf",
-                "aliases": [
-                    "leaf",
-                    "Leaf"
-                ],
-                "extensions": [
-                    ".leaf"
-                ],
-                "configuration": "./language-configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "leaf",
-                "scopeName": "source.leaf",
-                "path": "./syntaxes/leaf.tmLanguage.json"
-            }
-        ],
-        "snippets": [
-            {
-                "language": "leaf",
-                "path": "./snippets/snippets.json"
-            },
-            {
-                "language": "leaf",
-                "path": "./snippets/snippets_html.json"
-            }
-        ]
-    }
+    "grammars": [
+      {
+        "language": "leaf",
+        "scopeName": "source.leaf",
+        "path": "./syntaxes/leaf.tmLanguage.json",
+        "embeddedLanguages": {
+          "text.html.basic": "html",
+          "text.html.vue-html": "vue-html"
+        }
+      },
+      {
+        "language": "leaf-html",
+        "scopeName": "text.html.leaf-html",
+        "path": "./syntaxes/leaf-html.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.js": "javascript"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "leaf",
+        "path": "./snippets/snippets.json"
+      },
+      {
+        "language": "leaf",
+        "path": "./snippets/snippets_html.json"
+      }
+    ]
+  }
 }
