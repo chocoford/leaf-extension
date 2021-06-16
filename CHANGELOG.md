@@ -14,3 +14,9 @@ remove `number`, `invalid` detection out of tag.
 
 fix bugs. Such as wrong highlighting of `in`.
 add a syntax highlight for parameters in `if(...):`
+
+## 0.0.6
+
+fix bugs in issue [#1](https://github.com/chocoford/leaf-extension/issues/1).
+Now syntax supports highlighting functions and variables used in a string.![0.0.6-1](Public/CHANGELOG/0.0.6-1.png)
+
